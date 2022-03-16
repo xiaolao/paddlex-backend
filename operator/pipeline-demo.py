@@ -36,7 +36,8 @@ def create_resource_op():
         name="Data Source Secret",
         action='apply',
         k8s_resource=data_source_secret,
-    ).set_display_name("create data source secret for SampleJob")
+    ).set_display_name("create data source secret for SampleJob"
+    ).add_pod_annotation(name="pipelines.kubeflow.org/max_cache_staleness", value="P0D")
 
 
 def create_dataset_op():

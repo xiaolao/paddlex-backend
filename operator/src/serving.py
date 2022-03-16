@@ -62,7 +62,7 @@ def main(argv=None):
                         default='kubeflow',
                         help='The namespace of PaddleService.')
     parser.add_argument('--action', type=str, default="apply",
-                        help='Action toserving execute on ElasticServing.')
+                        help='Action to serving execute on ElasticServing.')
 
     parser.add_argument('--image', type=str, required=True,
                         help='The image of the Paddle Serving.')

@@ -1,4 +1,3 @@
-
 # 1. install istio
 kubectl apply -f ./pipeline-standalone/istio/namespace.yaml;
 kubectl apply -f ./pipeline-standalone/istio/istio.yaml;
@@ -22,7 +21,11 @@ kubectl apply -f ./paddle-operator/crds.yaml;
 kubectl apply -f ./paddle-operator/deploys.yaml;
 sleep 10;
 
-# 5. install jupyter hub
+# 5. install elastic serving
+kubectl apply -f ./ElasticServing/elastic-serving.yaml;
+sleep 10;
+
+# 6. install jupyter hub
 helm repo add jupyterhub https://jupyterhub.github.io/helm-chart/;
 helm repo update
 helm upgrade --cleanup-on-fail \
